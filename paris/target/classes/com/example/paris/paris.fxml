@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" stylesheets="@css.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.paris.HelloController">    <children>
+        <BorderPane prefHeight="738.0" prefWidth="1400.0">
+            <bottom>
+                <HBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="1100.0">
+                    <children>
+                        <VBox prefHeight="200.0" prefWidth="1399.0">
+                            <children>
+                                <Separator prefWidth="200.0" />
+                                <HBox alignment="TOP_RIGHT" prefHeight="115.0" prefWidth="1359.0" style="-fx-background-color: #ffffff;">
+                                    <children>
+                                            <VBox alignment="TOP_CENTER" prefHeight="115.0" prefWidth="266.0">
+                                                <children>
+                                                    <Label prefHeight="48.0" prefWidth="147.0" text="Pick a Starting Location" underline="true">
+                                                        <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                        </font>
+                                                    </Label>
+                                                    <MenuButton fx:id="startPoint" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ffffff;" text="Starting Point" />
+                                                </children>
+                                            </VBox>
+                                        <VBox prefHeight="198.0" prefWidth="921.0">
+                                            <children>
+                                                <HBox prefHeight="204.0" prefWidth="929.0">
+                                                    <children>
+                                                        <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="161.0" prefWidth="159.0">
+                                                            <children>
+                                                                <Label prefHeight="48.0" prefWidth="126.0" text="Pick a Destination" underline="true">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <MenuButton fx:id="destinationPoint" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: #ffffff;" text="Destination Point" />
+                                                            </children>
+                                                        </VBox>
+                                                        <HBox prefHeight="162.0" prefWidth="260.0">
+                                             <children>
+                                                          <VBox prefHeight="201.0" prefWidth="250.0">
+                                                              <children>
+                                                                  <MenuButton fx:id="avoidPoint" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Avoid a Location" />
+                                                                  <HBox prefHeight="28.0" prefWidth="250.0">
+                                                                      <children>
+                                                                          <Button fx:id="addAvoidPointButton" mnemonicParsing="false" onAction="#addAvoidPoint" style="-fx-background-color: #ffffff;" text="Add">
+                                                                              <font>
+                                                                                  <Font name="System Bold Italic" size="12.0" />
+                                                                              </font>
+                                                                          </Button>
+                                                                          <Button fx:id="removeAvoidPointstButton" mnemonicParsing="false" onAction="#removePoint" style="-fx-background-color: #ffffff;" text="Remove">
+                                                                              <HBox.margin>
+                                                                                  <Insets left="20.0" />
+                                                                              </HBox.margin>
+                                                                              <font>
+                                                                                  <Font name="System Bold Italic" size="12.0" />
+                                                                              </font>
+                                                                          </Button>
+                                                                      </children>
+                                                                  </HBox>
+                                                                  <ListView fx:id="avoidListview" prefHeight="50.0" prefWidth="246.0" />
+                                                              </children>
+                                                          </VBox>
+                                             </children>
+                                                        </HBox>
+                                                          <VBox prefHeight="200.0" prefWidth="252.0">
+                                                              <children>
+                                                                  <MenuButton fx:id="waypointPoint" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Waypoints">
+                                                                      <VBox.margin>
+                                                                          <Insets left="75.0" top="5.0" />
+                                                                      </VBox.margin>
+                                                                  </MenuButton>
+                                                                  <HBox prefHeight="28.0" prefWidth="250.0">
+                                                                      <children>
+                                                                          <Button fx:id="addWaypointButton" mnemonicParsing="false" onAction="#addWaypoint" style="-fx-background-color: rgba(255,255,255,0.93);" text="Add">
+                                                                              <font>
+                                                                                  <Font name="System Bold Italic" size="12.0" />
+                                                                              </font>
+                                                                          </Button>
+                                                                          <Button fx:id="removeWaypointButton" mnemonicParsing="false" onAction="#removeWaypoint" style="-fx-background-color: #ffffff;" text="Remove">
+                                                                              <HBox.margin>
+                                                                                  <Insets left="20.0" />
+                                                                              </HBox.margin>
+                                                                              <font>
+                                                                                  <Font name="System Bold Italic" size="12.0" />
+                                                                              </font>
+                                                                          </Button>
+                                                                      </children>
+                                                                  </HBox>
+                                                                  <ListView fx:id="waypointListview" prefHeight="50.0" prefWidth="252.0" />
+                                                              </children>
+                                                          </VBox>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </bottom>
+            <center>
+                <AnchorPane fx:id="mapPane" prefHeight="523.0" prefWidth="841.0" style="-fx-background-color: #ffffff;">
+                    <ImageView fx:id="mapImageView" fitHeight="500.0" fitWidth="883.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@images/PARISSS.png" />
+                        </image>
+                    </ImageView>
+                    <Separator layoutX="875.0" orientation="VERTICAL" prefHeight="499.0" prefWidth="11.0" />
+                </AnchorPane>
+            </center>
+            <left>
+                <HBox prefHeight="500.0" prefWidth="216.0">
+                    <children>
+                        <VBox prefHeight="288.0" prefWidth="216.0" style="-fx-background-color: #1959b9;">
+                            <children>
+                                <Button fx:id="initialiseMapButton" mnemonicParsing="false" onAction="#initialiseMap" prefHeight="26.0" prefWidth="160.0" text="Map Points">
+                                    <font>
+                                        <Font name="System Bold Italic" size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="dijkstraSearchButton" mnemonicParsing="false" onAction="#dijkstraSearch" prefHeight="45.0" prefWidth="215.0" text="Dijkstras">
+                                    <font>
+                                        <Font name="System Bold Italic" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="215.0" text="Depth First Search">
+                                    <font>
+                                        <Font name="System Bold Italic" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="bfsSearchButton" mnemonicParsing="false" onAction="#bfsSearch" prefHeight="45.0" prefWidth="215.0" text="Breath First Search">
+                                    <font>
+                                        <Font name="System Bold Italic" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="clearMap" mnemonicParsing="false" onAction="#clearMap" prefHeight="45.0" prefWidth="215.0" text="Clear Map">
+                                    <font>
+                                        <Font name="System Bold Italic" size="13.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </left>
+            <right>
+                <VBox prefHeight="500.0" prefWidth="304.0" style="-fx-background-color: #ba2036;">
+                    <children>
+                        <Label prefHeight="60.0" prefWidth="304.0" text="Directions to the Destination" textAlignment="CENTER" underline="true">
+                            <font>
+                                <Font name="System Bold" size="22.0" />
+                            </font>
+                        </Label>
+                        <ListView fx:id="routeOutput" prefHeight="449.0" prefWidth="304.0" />
+                    </children>
+                </VBox>
+            </right>
+            <top>
+                <HBox prefHeight="81.0" prefWidth="1400.0" style="-fx-background-color: #ffffff;">
+                    <children>
+                        <ImageView fitHeight="81.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label alignment="CENTER" prefHeight="82.0" prefWidth="1230.0" text="Paris Route Finder" textFill="#000000">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>
